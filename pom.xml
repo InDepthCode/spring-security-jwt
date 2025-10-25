@@ -63,6 +63,31 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+
+			<!-- Core JWT API -->
+			<dependency>
+				<groupId>io.jsonwebtoken</groupId>
+				<artifactId>jjwt-api</artifactId>
+				<version>0.12.6</version>
+			</dependency>
+
+			<!-- Implementation (runtime only) -->
+			<dependency>
+				<groupId>io.jsonwebtoken</groupId>
+				<artifactId>jjwt-impl</artifactId>
+				<version>0.12.6</version>
+				<scope>runtime</scope>
+			</dependency>
+
+			<!-- JSON serialization/deserialization (Jackson) -->
+			<dependency>
+				<groupId>io.jsonwebtoken</groupId>
+				<artifactId>jjwt-jackson</artifactId>
+				<version>0.12.6</version>
+				<scope>runtime</scope>
+			</dependency>
+
 	</dependencies>
 
 	<build>

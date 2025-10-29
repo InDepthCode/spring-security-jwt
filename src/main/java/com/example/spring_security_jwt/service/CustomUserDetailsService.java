@@ -24,9 +24,12 @@ public class CustomUserDetailsService implements UserDetailsService {
     }
 
 
+    // iska kaam ye tha ki tumhare plain jpa entity ko badal ke userdeatils ka obj banao taki spring security ko
+    // jwt string se user name find krne me asani ho !
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findByUsername(username)
+        User user = userRepository.findByUsername(username) // User = amrut123
                 .orElseThrow(() -> new UsernameNotFoundException("User not found: " + username));
 
         return new org.springframework.security.core.userdetails.User(

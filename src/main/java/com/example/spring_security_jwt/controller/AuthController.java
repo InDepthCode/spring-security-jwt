@@ -45,8 +45,8 @@ public class AuthController {
         }
         final User newuser = new User(
                 null,
-                user.getUsername(),
-                encoder.encode(user.getPassword())
+                user.getUsername(), // amrut
+                encoder.encode(user.getPassword()) // pass
 
         );
         userRepository.save(newuser);
@@ -54,7 +54,6 @@ public class AuthController {
     }
 
     //login
-
     @PostMapping("/login")
     public String Login(@RequestBody User user){
         Authentication authentication = authenticationManager.authenticate(new org.springframework.security.authentication.UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));

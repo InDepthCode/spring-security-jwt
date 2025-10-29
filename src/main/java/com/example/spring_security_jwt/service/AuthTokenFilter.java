@@ -43,6 +43,7 @@ public class AuthTokenFilter extends OncePerRequestFilter {
         try{
             String jwt = parseJwt(request);
             if(jwt != null && jwtUtil.validateToken(jwt)){
+                // eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBbXJ1dDEyMyIsImlhdCI6MTc2MTczNTczNiwiZXhwIjoxNzYxNzM2MDk2fQ.HBTrilZa_CW9pgUcIN1B9vhzaXZ6s2QpWs9LeG9F-_k
                 final String username = jwtUtil.getUsername(jwt);
                 final UserDetails userDetails = customUserDetailsService.loadUserByUsername(username);
                 UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
@@ -67,6 +68,7 @@ public class AuthTokenFilter extends OncePerRequestFilter {
         String bearerToken = request.getHeader("Authorization");
         if (bearerToken != null && bearerToken.startsWith("Bearer ")) {
             return bearerToken.substring(7);
+//             eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBbXJ1dDEyMyIsImlhdCI6MTc2MTczNTczNiwiZXhwIjoxNzYxNzM2MDk2fQ.HBTrilZa_CW9pgUcIN1B9vhzaXZ6s2QpWs9LeG9F-_k
         }
         return null;
     }

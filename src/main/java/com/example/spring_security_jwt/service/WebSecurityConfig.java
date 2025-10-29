@@ -29,8 +29,6 @@ public class WebSecurityConfig {
     private AuthEntryPointJwt authEntryPointJwt;
 
 
-
-
     @Bean
     public AuthTokenFilter authTokenFilter() {
         return new AuthTokenFilter();

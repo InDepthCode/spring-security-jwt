@@ -26,7 +26,6 @@ public class JwtUtil {
     private SecretKey key;
 
     @PostConstruct // - @PostConstruct runs, converting the secret string into a cryptographic key.
-
     public void init() {
         this.key = Keys.hmacShaKeyFor(secret.getBytes());
     }
